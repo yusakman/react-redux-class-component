@@ -52,15 +52,15 @@ class Login extends Component {
           onChange={(e) => this.handlePassword(e)}
         ></input>
         <button onClick={(e) => this.handleLogin(e)}>Login</button>
-        {console.log(this.props.status)}
-        {!!this.props.status ? "Login Berhasil" : ""}
+        {console.log(this.props.tokenLogin)}
+        {!!this.props.tokenLogin ? "Login Berhasil" : ""}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  return { status: state.status.tokenLogin };
+  return { tokenLogin: state.status.tokenLogin };
 };
 
 export default connect(mapStateToProps, {postLogin})(Login);
